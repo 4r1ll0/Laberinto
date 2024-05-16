@@ -25,7 +25,7 @@ public class personaje : MonoBehaviour
             rb.velocity = new Vector2(0, 0);
             acumulacion = acumulacion + Time.deltaTime;
             Debug.Log(acumulacion);
-            if (acumulacion > 5)
+            if (acumulacion > 2)
             {
                 estoyQuieto = false;
                 acumulacion = 0;
@@ -51,6 +51,23 @@ public class personaje : MonoBehaviour
             //empezar cuenta atras
             estoyQuieto = true;
             //
+        }
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("barro"));
+        {
+            speed = 2;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("barro"));
+        {
+            speed = 10;
         }
     }
 
