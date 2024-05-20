@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class personaje : MonoBehaviour
 {
@@ -9,6 +11,10 @@ public class personaje : MonoBehaviour
     float acumulacion = 0.0f;
     bool estoyQuieto = false;
     SpriteRenderer sr;
+    public TMP_Text textoContadorMonedas;
+    float monedasTotales = 4f;
+    float monedas = 1f;
+
 
     void Start()
     {
@@ -45,14 +51,19 @@ public class personaje : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("pared"));
+        if (collision.collider.CompareTag("pared"))
         {
             sr.color = Color.red;
             //empezar cuenta atras
             estoyQuieto = true;
             //
         }
-        
+        if (collision.collider.CompareTag("monedas"))
+        {
+            Destroy(collision.gameObject);
+            monedas++;
+            textoContadorMonedas = ;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -61,14 +72,17 @@ public class personaje : MonoBehaviour
         {
             speed = 2;
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("barro"));
+        if (collision.CompareTag("barro"))
         {
             speed = 10;
         }
     }
+
+    
 
 }

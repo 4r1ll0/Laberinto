@@ -6,6 +6,8 @@ TagManager:
   tags:
   - pared
   - barro
+  - player
+  - monedas
   layers:
   - Default
   - TransparentFX
