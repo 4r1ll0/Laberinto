@@ -15,7 +15,8 @@ public class contador : MonoBehaviour
         // actualizar el contaDOR DEL tiempo
         acumulacion = acumulacion + Time.deltaTime;
         Debug.Log(acumulacion);
-        textoTiempo.text = acumulacion.ToString("#.00");
+
+        textoTiempo.text = acumulacion.ToString("#.00") + "/120";
         // actualizar la interfaz
 
         // textoTiempo.text = "Hola iván :)";

@@ -13,7 +13,7 @@ public class personaje : MonoBehaviour
     SpriteRenderer sr;
     public TMP_Text textoContadorMonedas;
     float monedasTotales = 4f;
-    float monedas = 1f;
+    float monedas = 0f;
 
 
     void Start()
@@ -62,7 +62,7 @@ public class personaje : MonoBehaviour
         {
             Destroy(collision.gameObject);
             monedas++;
-            textoContadorMonedas = ;
+            textoContadorMonedas.text = monedas.ToString() + "/4";
         }
     }
 
